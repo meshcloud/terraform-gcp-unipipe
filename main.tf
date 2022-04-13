@@ -61,6 +61,7 @@ resource "random_password" "unipipe_basic_auth_password" {
 
 resource "google_cloud_run_service" "default" {
   name     = var.cloudrun_service_name
+  project  = var.project_id
   location = var.region
 
   template {
