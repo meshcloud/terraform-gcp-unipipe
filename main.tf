@@ -60,7 +60,6 @@ resource "random_password" "unipipe_basic_auth_password" {
 }
 
 resource "google_cloud_run_service" "default" {
-  # count    = var.create_cloudrun_service ? 1 : 0
   name     = var.cloudrun_service_name
   location = var.region
 
@@ -105,7 +104,6 @@ resource "google_cloud_run_service" "default" {
 
 # UniPipe uses basic auth, therefore we use the noauth policy for CloudRun
 data "google_iam_policy" "noauth" {
-  # count = var.create_cloudrun_service ? 1 : 0
   binding {
     role = "roles/run.invoker"
     members = [
@@ -115,7 +113,6 @@ data "google_iam_policy" "noauth" {
 }
 
 resource "google_cloud_run_service_iam_policy" "noauth" {
-  # count       = var.create_cloudrun_service ? 1 : 0
   location    = google_cloud_run_service.default.location
   project     = google_cloud_run_service.default.project
   service     = google_cloud_run_service.default.name

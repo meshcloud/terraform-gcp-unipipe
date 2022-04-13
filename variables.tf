@@ -1,9 +1,3 @@
-# variable "create_cloudrun_service" {
-#   description = "You should set it as 'True' after you configure your Github repository and apply the terraform template again."
-#   type        = bool
-#   default     = true
-# }
-
 variable "unipipe_git_remote" {
   type        = string
   description = "Git repo URL. Use a deploy key (GitHub) or similar to setup an automation user SSH key for unipipe."
