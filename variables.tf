@@ -8,17 +8,16 @@ variable "project_id" {
   description = "The project ID to deploy resource into"
 }
 
-variable "cloudrun_service_name" {
-  type        = string
-  description = "The CloudRun service name"
-  default     = "unipipe-demo"
-}
-
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL PARAMETERS
 # These parameters have reasonable defaults.
 # ---------------------------------------------------------------------------------------------------------------------
 
+variable "cloudrun_service_name" {
+  type        = string
+  description = "The CloudRun service name"
+  default     = "unipipe"
+}
 variable "region" {
   type        = string
   description = "The Region to deploy resource into"
