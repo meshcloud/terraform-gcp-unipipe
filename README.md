@@ -10,5 +10,5 @@ This setup will store the private key in your terrraform state and is thus not r
 
 - [Terraform installed](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 - Valid GCloud credentials to execute terraform `gcloud auth login` and `gcloud auth configure-docker`
-- Permissions `resourcemanager.projects.setIamPolicy` and `resourcemanager.projects.getIamPolicy` on the GCloud Project. Therefore `roles/editor` permissions are not sufficient.
+- Permissions `roles/iam.serviceAccountUser`, `resourcemanager.projects.setIamPolicy` and `resourcemanager.projects.getIamPolicy` on the GCloud Project. Therefore `roles/editor` permissions are not sufficient.
 - [docker installed](https://www.docker.com/get-started/) This module uses docker pull/push commands for mirroring the unipipe-service-broker images.
