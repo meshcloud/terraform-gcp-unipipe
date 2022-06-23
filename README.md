@@ -10,6 +10,12 @@ This setup will store the private key in your terrraform state and is thus not r
 
 - [Terraform installed](https://learn.hashicorp.com/tutorials/terraform/install-cli)
 - Valid GCloud credentials to execute terraform `gcloud auth login` and `gcloud auth configure-docker`
-- Permissions `roles/iam.serviceAccountUser`, `resourcemanager.projects.setIamPolicy` and `resourcemanager.projects.getIamPolicy` on the GCloud Project. Therefore `roles/editor` permissions are not sufficient.
-- Permission to write images to the GCR bucket. For example `Storage Legacy Bucket Owner`. See [google docs](https://cloud.google.com/container-registry/docs/access-control).
-- [docker installed](https://www.docker.com/get-started/) This module uses docker pull/push commands for mirroring the unipipe-service-broker images.
+- [docker installed](https://www.docker.com/get-started/) (This module uses docker pull/push commands for mirroring the unipipe-service-broker images on GCR)
+
+### Needed Permissions 
+
+- `roles/iam.serviceAccountUser`
+- `roles/resourcemanager.projectIamAdmin`
+- `roles/storage.legacyBucketWriter` (for [writing images to GCR](https://cloud.google.com/container-registry/docs/access-control)).
+
+Note: `roles/editor` permissions are not sufficient!
