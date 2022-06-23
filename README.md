@@ -14,8 +14,8 @@ This setup will store the private key in your terrraform state and is thus not r
 
 ### Needed Permissions 
 
-- `roles/iam.serviceAccountUser`
-- `roles/resourcemanager.projectIamAdmin`
-- `roles/storage.legacyBucketWriter` (for [writing images to GCR](https://cloud.google.com/container-registry/docs/access-control)).
+- `roles/iam.serviceAccountUser` (to deploy a revision, you need the iam.serviceaccounts.actAs permission on the service account used by the Cloud Run service)
+- `roles/resourcemanager.projectIamAdmin` (to set access for Cloud Run)
+- `roles/storage.legacyBucketWriter` (to [write images to GCR](https://cloud.google.com/container-registry/docs/access-control)).
 
 Note: `roles/editor` permissions are not sufficient!
